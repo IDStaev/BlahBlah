@@ -133,9 +133,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BlahBlah.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="src\commands\Command.cpp" />
+    <ClCompile Include="src\commands\CreateAccountCommand.cpp" />
+    <ClCompile Include="src\entities\AdminUser.cpp" />
     <ClCompile Include="src\entities\Entity.cpp" />
+    <ClCompile Include="src\entities\User.cpp" />
+    <ClCompile Include="src\services\CommandContext.cpp" />
+    <ClCompile Include="src\services\CommandHandler.cpp" />
+    <ClCompile Include="src\services\IdGenerator.cpp" />
+    <ClCompile Include="src\services\SessionManager.cpp" />
+    <ClCompile Include="src\utils\my_string.cpp" />
+    <ClCompile Include="src\utils\sha256.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\commands\Command.h" />

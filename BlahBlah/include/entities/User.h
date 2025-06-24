@@ -1,7 +1,8 @@
 #pragma once
 #include <string>
 #include "entities\Entity.h"
-#include "commands\Command.h"
+
+class Command;
 
 class User : public Entity
 {
