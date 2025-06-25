@@ -4,6 +4,7 @@
 class SessionManager
 {
 public:
+	~SessionManager();
 	void login(const User& user);
 	void logout();
 	bool isLoggedIn() const;

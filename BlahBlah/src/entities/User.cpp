@@ -1,3 +1,4 @@
+#include <iostream>
 #include "entities/User.h"
 #include "commands/Command.h"
 
@@ -30,11 +31,21 @@ std::string User::serialize() const
 size_t User::deserialize(const std::string& line)
 {
     size_t pos1 = line.find(" ");
-    size_t pos2 = line.find(" ", pos1 + 1);
-
+    size_t endpos = line.find(" ", pos1 + 1);
+    if (endpos == std::string::npos)
+        endpos = line.length();
     this->username = line.substr(0, pos1);
-    this->passwordHash = line.substr(pos1 + 1, pos2 - pos1 - 1);
+    this->passwordHash = line.substr(pos1 + 1, endpos - pos1 - 1);
 
-    return pos2;
+    return endpos;
 }
 
+void User::print() const
+{
+    std::cout << this->username << " {User}\n";
+}
+
+User* User::clone() const
+{
+    return new User(*this);
+}

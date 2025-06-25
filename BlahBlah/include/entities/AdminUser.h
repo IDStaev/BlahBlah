@@ -13,6 +13,9 @@ public:
 	std::string serialize() const override;
 	size_t deserialize(const std::string& line) override;
 
+	void print() const override;
+	User* clone() const override;
+
 private:
 	uint32_t id = 0;
 };

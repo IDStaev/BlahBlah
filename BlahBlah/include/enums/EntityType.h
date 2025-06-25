@@ -1,2 +1,2 @@
 #pragma once
-enum class EntityType { User };
+enum class IdType { Admin };

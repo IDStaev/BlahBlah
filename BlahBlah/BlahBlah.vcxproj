@@ -136,6 +136,10 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\commands\Command.cpp" />
     <ClCompile Include="src\commands\CreateAccountCommand.cpp" />
+    <ClCompile Include="src\commands\CreateAdminAccountCommand.cpp" />
+    <ClCompile Include="src\commands\LoginCommand.cpp" />
+    <ClCompile Include="src\commands\LogoutCommand.cpp" />
+    <ClCompile Include="src\commands\SessionCommand.cpp" />
     <ClCompile Include="src\entities\AdminUser.cpp" />
     <ClCompile Include="src\entities\Entity.cpp" />
     <ClCompile Include="src\entities\User.cpp" />
@@ -149,6 +153,10 @@
   <ItemGroup>
     <ClInclude Include="include\commands\Command.h" />
     <ClInclude Include="include\commands\CreateAccountCommand.h" />
+    <ClInclude Include="include\commands\CreateAdminAccountCommand.h" />
+    <ClInclude Include="include\commands\LoginCommand.h" />
+    <ClInclude Include="include\commands\LogoutCommand.h" />
+    <ClInclude Include="include\commands\SessionCommand.h" />
     <ClInclude Include="include\entities\AdminUser.h" />
     <ClInclude Include="include\entities\Entity.h" />
     <ClInclude Include="include\entities\User.h" />
@@ -165,6 +173,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="data\.gitkeep" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data\admins.txt" />
+    <Text Include="data\users.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -51,6 +51,18 @@
     <ClCompile Include="src\commands\CreateAccountCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\commands\CreateAdminAccountCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\SessionCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\LoginCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\LogoutCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\entities\Entity.h">
@@ -98,8 +110,24 @@
     <ClInclude Include="include\utils\sha256.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\commands\CreateAdminAccountCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\commands\SessionCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\commands\LoginCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\commands\LogoutCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="data\.gitkeep" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data\users.txt" />
+    <Text Include="data\admins.txt" />
   </ItemGroup>
 </Project>

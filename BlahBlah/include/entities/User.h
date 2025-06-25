@@ -17,6 +17,9 @@ public:
 	std::string serialize() const override;
 	size_t deserialize(const std::string& line) override;
 
+	virtual void print() const;
+	virtual User* clone() const;
+
 private:
 	std::string username = "";
 	std::string passwordHash = "";

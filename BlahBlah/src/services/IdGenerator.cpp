@@ -3,15 +3,14 @@
 #include "services/IdGenerator.h"
 
 IdGenerator::IdGenerator()
-	:filename("data/Id.bin")
 {
 	if (!fileExists())
 		initializeFile();
 }
 
-uint32_t IdGenerator::getNew(EntityType type) const
+uint32_t IdGenerator::getNew(IdType type) const
 {
-	std::fstream ifs("data/Id.bin", std::ios::in | std::ios::out); // !!!
+	std::fstream ifs(this->filename, std::ios::in | std::ios::out);
 	if (!ifs.is_open())
 		throw std::runtime_error("No " + this->filename + " file found");
 
@@ -30,7 +29,7 @@ uint32_t IdGenerator::getNew(EntityType type) const
 
 bool IdGenerator::fileExists() const
 {
-	if (std::filesystem::exists("data/Id.bin"));// !!!
+	if (std::filesystem::exists(this->filename));
 	if (std::filesystem::is_regular_file(this->filename))
 		return true;
 	return false;

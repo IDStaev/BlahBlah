@@ -6,7 +6,7 @@ class IdGenerator
 {
 public:
 	IdGenerator();
-	uint32_t getNew(EntityType type) const;
+	uint32_t getNew(IdType type) const;
 
 private:
 	std::string filename = "data/id.bin";

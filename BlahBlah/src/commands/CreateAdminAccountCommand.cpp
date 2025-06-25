@@ -1,24 +1,23 @@
 #include <iostream>
-#include "commands/CreateAccountCommand.h"
+#include "commands\CreateAdminAccountCommand.h"
 #include "utils/sha256.h"
 
-void CreateAccountCommand::execute()
+void CreateAdminAccountCommand::execute()
 {
     if (this->context.session.isLoggedIn()) {
         std::cout << "You must be logged out.\n";
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return;
     }
-
-    
-    std::string username, password; // Check between fields
+    std::string username, password;
     std::cin >> username >> password;
 
+    // DRY PRINCIPLE FAIL
     std::vector<User> allUsers = this->context.userRepo.loadAll(); // maybe pointer
     std::vector<AdminUser> allAdmins = this->context.adminRepo.loadAll();
     for (const auto& user : allUsers) {
         if (user.getUsername() == username) {
-            std::cout << "User with username {" << username<<"} already exists.\n";
+            std::cout << "User with username {" << username << "} already exists.\n";
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             return;
         }
@@ -31,23 +30,25 @@ void CreateAccountCommand::execute()
         }
     }
 
-    User user(username, sha256(password));
-    this->context.userRepo.save(user);
+    uint32_t id = this->context.idGenerator.getNew(IdType::Admin);
+
+    AdminUser admin(id, username, sha256(password));
+    this->context.adminRepo.save(admin);
 
     std::cout << "Account created successfully.\n";
 }
 
-std::string CreateAccountCommand::name() const
+std::string CreateAdminAccountCommand::name() const
 {
-    return "create_account";
+    return "create_admin_account";
 }
 
-bool CreateAccountCommand::isAllowedForUser() const
+bool CreateAdminAccountCommand::isAllowedForUser() const
 {
     return true;
 }
 
-bool CreateAccountCommand::isAllowedForAdmin() const
+bool CreateAdminAccountCommand::isAllowedForAdmin() const
 {
     return true;
 }

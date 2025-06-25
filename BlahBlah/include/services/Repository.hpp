@@ -33,7 +33,7 @@ void Repository<T>::save(const T& obj) const
 	if (!ofs.is_open())
 		throw std::runtime_error("No " + this->filename + " file found.");
 
-	ofs << obj.serialize() << '\n';
+	ofs << obj.serialize() << "\n";
 	ofs.close();
 }
 

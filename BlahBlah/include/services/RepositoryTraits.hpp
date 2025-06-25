@@ -4,6 +4,12 @@
 #include "entities\User.h"
 #include "entities\AdminUser.h"
 
+namespace FILENAME {
+	static const char* DEFAULT = "";
+	static const char* USER = "data/users.txt";
+	static const char* ADMIN = "data/admins.txt";
+}
+
 template<typename T>
 struct RepositoryTraits {
 	static std::string getFileName();
@@ -12,7 +18,7 @@ struct RepositoryTraits {
 template<typename T>
 std::string RepositoryTraits<T>::getFileName()
 {
-	return "";
+	return FILENAME::DEFAULT;
 }
 
 template<>
@@ -22,7 +28,7 @@ struct RepositoryTraits<User> {
 
 inline std::string RepositoryTraits<User>::getFileName()
 {
-	return "data/users.txt";
+	return FILENAME::USER;
 }
 
 template<>
@@ -32,5 +38,5 @@ struct RepositoryTraits<AdminUser> {
 
 inline std::string RepositoryTraits<AdminUser>::getFileName()
 {
-	return "data/admins.txt";
+	return FILENAME::ADMIN;
 }
