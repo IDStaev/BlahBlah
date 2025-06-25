@@ -63,6 +63,15 @@
     <ClCompile Include="src\commands\LogoutCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\entities\Message.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\SendMessageCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\commands\SelectChatCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\entities\Entity.h">
@@ -122,6 +131,15 @@
     <ClInclude Include="include\commands\LogoutCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\entities\Message.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\commands\SendMessageCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\commands\SelectChatCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="data\.gitkeep" />
@@ -129,5 +147,6 @@
   <ItemGroup>
     <Text Include="data\users.txt" />
     <Text Include="data\admins.txt" />
+    <Text Include="data\messages.txt" />
   </ItemGroup>
 </Project>

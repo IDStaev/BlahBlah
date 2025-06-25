@@ -139,9 +139,12 @@
     <ClCompile Include="src\commands\CreateAdminAccountCommand.cpp" />
     <ClCompile Include="src\commands\LoginCommand.cpp" />
     <ClCompile Include="src\commands\LogoutCommand.cpp" />
+    <ClCompile Include="src\commands\SelectChatCommand.cpp" />
+    <ClCompile Include="src\commands\SendMessageCommand.cpp" />
     <ClCompile Include="src\commands\SessionCommand.cpp" />
     <ClCompile Include="src\entities\AdminUser.cpp" />
     <ClCompile Include="src\entities\Entity.cpp" />
+    <ClCompile Include="src\entities\Message.cpp" />
     <ClCompile Include="src\entities\User.cpp" />
     <ClCompile Include="src\services\CommandContext.cpp" />
     <ClCompile Include="src\services\CommandHandler.cpp" />
@@ -156,9 +159,12 @@
     <ClInclude Include="include\commands\CreateAdminAccountCommand.h" />
     <ClInclude Include="include\commands\LoginCommand.h" />
     <ClInclude Include="include\commands\LogoutCommand.h" />
+    <ClInclude Include="include\commands\SelectChatCommand.h" />
+    <ClInclude Include="include\commands\SendMessageCommand.h" />
     <ClInclude Include="include\commands\SessionCommand.h" />
     <ClInclude Include="include\entities\AdminUser.h" />
     <ClInclude Include="include\entities\Entity.h" />
+    <ClInclude Include="include\entities\Message.h" />
     <ClInclude Include="include\entities\User.h" />
     <ClInclude Include="include\enums\EntityType.h" />
     <ClInclude Include="include\enums\UserRole.h" />
@@ -176,6 +182,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="data\admins.txt" />
+    <Text Include="data\messages.txt" />
     <Text Include="data\users.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

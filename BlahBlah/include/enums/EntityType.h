@@ -1,2 +1,2 @@
 #pragma once
-enum class IdType { Admin };
+enum class IdType { Admin, Message };
